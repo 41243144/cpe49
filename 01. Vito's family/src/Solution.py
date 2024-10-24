@@ -10,7 +10,7 @@ class Solution():
 
         while data_count:
             # 讀進輸入資料
-            data = list(map(int, input().split())) 
+            data = list(map(int, input().split()))
             # pop(0)因為第一筆是數量
             data.pop(0)
             data_length = len(data)
