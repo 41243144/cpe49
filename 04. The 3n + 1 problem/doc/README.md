@@ -178,6 +178,11 @@ int main() {
 }
 ```
 ---
+## Python 通過
+![通過](通過python.png)
+
+## C++ 通過
+![通過](通過c++.png)
 
 ##### By. wenwen
 ##### 參考資料:[高中生程式解題系統](https://zerojudge.tw/)
