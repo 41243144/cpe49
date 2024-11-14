@@ -17,10 +17,12 @@ private:
 
             if(a == 0 && b == 0) break;
 
+            // 初始化進未及計數為0
             int c = 0;
             int times = 0;
 
-            while (a || b || c){
+            // 若a b都不為0就繼續更新carry 為 a b個別取10餘數並 +上 carry 之後除10，若carry 為1代表進位則count + 1
+            while (a || b){
                 int temp = a % 10 + b % 10 + c;
                 c = temp / 10;
                 if(c == 1) times ++;

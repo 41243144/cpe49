@@ -31,15 +31,8 @@ public:
             // 利用algorithm sort()排序
             sort(list.begin(), list.end());
 
-            // 若元素個數為偶數的話比較
-            if(length % 2 == 0){
-                int result1 = calculate(list, list[length / 2]);
-                int result2 = calculate(list, list[length / 2  - 1]);
-
-                cout << min(result1, result2) << endl;
-            }else{
-                cout << calculate(list, list[length / 2]) << endl;
-            }
+            int mid = list[length / 2];
+            cout << calculate(list, mid) << endl;
 
         }
     }

@@ -107,8 +107,76 @@ def process(self, number : int) -> int:
 
     return self.table[number]
 ```
+#### 程式講解(C++)
+1. 凾式庫引入
+```c++
+#include <iostream>
+#include <unordered_map>
+#include <algorithm>
+```
 
+2. 類別初始化
+```c++
+class Solution {
+public:
+    Solution() {
+        table[1] = 1;
+        this->main();
+    }
+```
+3. 讀進資料並且記錄範圍最大值並輸出
+```c++
+private:
+    unordered_map<int, int> table;
 
+    void main() {
+        int a, b;
+
+        while (cin >> a >> b) {
+            int i = min(a, b);
+            int j = max(a, b);
+
+            int maxCycleLength = 0;
+
+            for (int k = i; k <= j; ++k) {
+                maxCycleLength = max(maxCycleLength, process(k));
+            }
+
+            cout << a << ' ' << b << ' ' << maxCycleLength << endl;
+        }
+    }
+```
+---
+```c++
+int process(int number) {
+    /*
+        不斷遞迴直到1或是途中找到已經有紀錄的提早返回
+    */
+    if (table.find(number) != table.end()) {
+        return table[number];
+    }
+
+    int result;
+    if (number % 2 == 0) {
+        result = process(number / 2) + 1;
+    }
+    else {
+        result = process(number * 3 + 1) + 1;
+    }
+
+    table[number] = result;
+
+    return result;
+    }
+```
+---
+#### 主程式執行區
+```c++
+int main() {
+    Solution();
+    return 0;
+}
+```
 ---
 
 ##### By. wenwen

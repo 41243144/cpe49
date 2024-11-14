@@ -17,16 +17,11 @@ class Solution():
             median = data_length // 2
             data.sort()
 
-            if data_length % 2:
-                # 因為奇數，所以判斷中位數 跟中位數 + 1
-                result = min(self.result_return(data, data[median]), self.result_return(data, data[median + 1]))
-                print(result)
-            else:
-                print(self.result_return(data, data[median]))
+            print(self.calculate(data, data[median]))
 
             data_count -= 1
 
-    def result_return(self, data: list, median: int) -> int:
+    def calculate(self, data: list, median: int) -> int:
         '''
             回傳中位數跟每個元素相減之結果
         '''

@@ -4,6 +4,7 @@ class Solution():
     def main(self):
         try:
             while True:
+                # 兩數相減取絕對值
                 a, b = map(int, input().split())
                 print(abs(a - b))
         except EOFError:
